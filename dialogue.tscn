@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://brlu3bmm5si3i"]
+
+[ext_resource type="Script" path="res://dialogue.gd" id="1_b3mg7"]
+[ext_resource type="FontFile" uid="uid://40fmi50vi01r" path="res://assets/fonts/nineteen-ninety-six-font/NineteenNinetySix-lWzq.ttf" id="2_t3w1w"]
+
+[sub_resource type="Theme" id="Theme_a3cft"]
+
+[node name="Dialogue" type="CanvasLayer"]
+visible = false
+follow_viewport_enabled = true
+script = ExtResource("1_b3mg7")
+
+[node name="DialogueBubble" type="Panel" parent="."]
+offset_right = 480.0
+offset_bottom = 64.0
+
+[node name="DialogueText" type="RichTextLabel" parent="DialogueBubble"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 68.0
+offset_top = 4.0
+offset_right = 476.0
+offset_bottom = 60.0
+theme = SubResource("Theme_a3cft")
+theme_override_fonts/normal_font = ExtResource("2_t3w1w")
+theme_override_font_sizes/normal_font_size = 14
+fit_content = true
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="DialogueAvatar" type="TextureRect" parent="DialogueBubble"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0

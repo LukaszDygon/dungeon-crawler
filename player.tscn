@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://kvuaehijusdn"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_qlchi"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_qlchi")
+
+[node name="RayCastForward" type="RayCast3D" parent="."]
+exclude_parent = false
+target_position = Vector3(2.08165e-12, 2.08165e-12, -2)
+
+[node name="RayCastBackward" type="RayCast3D" parent="."]
+exclude_parent = false
+target_position = Vector3(2.08165e-12, 2.08165e-12, 2)
+
+[node name="RayCastLeft" type="RayCast3D" parent="."]
+exclude_parent = false
+target_position = Vector3(-2, 2.08165e-12, 2.08165e-12)
+
+[node name="RayCastRight" type="RayCast3D" parent="."]
+exclude_parent = false
+target_position = Vector3(2, 2.08165e-12, 2.08165e-12)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+far = 10.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 5.0

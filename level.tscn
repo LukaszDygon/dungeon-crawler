@@ -1,0 +1,231 @@
+[gd_scene load_steps=16 format=3 uid="uid://tm605qwqojsy"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_em8dl"]
+[ext_resource type="PackedScene" uid="uid://kvuaehijusdn" path="res://player.tscn" id="1_uxslv"]
+[ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="2_3txfv"]
+[ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_ay83j"]
+[ext_resource type="Texture2D" uid="uid://bs2lnh4x52rqh" path="res://assets/tileset.png" id="4_4mgvv"]
+[ext_resource type="PackedScene" uid="uid://brlu3bmm5si3i" path="res://dialogue.tscn" id="5_c77ap"]
+[ext_resource type="Texture2D" uid="uid://cphhl0ikj3fnm" path="res://assets/entities/dog_guard.png" id="6_hfec7"]
+[ext_resource type="Script" path="res://character.gd" id="7_pgo0a"]
+[ext_resource type="FontFile" uid="uid://kl0niyckifr6" path="res://assets/fonts/nineteen-ninety-six-font/misc/Nineteen Ninety Six-25fc.woff" id="9_hh0yw"]
+[ext_resource type="Script" path="res://rps.gd" id="9_l6jjh"]
+[ext_resource type="FontFile" uid="uid://40fmi50vi01r" path="res://assets/fonts/nineteen-ninety-six-font/NineteenNinetySix-lWzq.ttf" id="10_g2m62"]
+[ext_resource type="AudioStream" uid="uid://ddn4grvhrbiw5" path="res://assets/audio/music/minimal-ambient-retro-161794.mp3" id="12_n3c8v"]
+[ext_resource type="Script" path="res://Music.gd" id="13_k3lxk"]
+
+[sub_resource type="Theme" id="Theme_lajq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbm3s"]
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_em8dl")
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="LevelBlock" type="Node3D" parent="Blocks"]
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock4" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+north_face = 6
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock2" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02722, 0, 0)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+east_face = 7
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock3" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02722, 0, 2)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+east_face = 0
+south_face = 0
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock5" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02722, 0, -2)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+north_face = 1
+east_face = 2
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock6" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97278, 0, -2)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+north_face = 0
+west_face = 0
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock7" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97278, 0, 0)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+west_face = 7
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock8" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97278, 0, 2)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+west_face = 7
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock9" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97278, 0, 4)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+south_face = 3
+west_face = 7
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock11" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02722, 0, 4)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+east_face = 1
+south_face = 0
+top_face = 5
+bottom_face = 10
+
+[node name="LevelBlock10" type="Node3D" parent="Blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02722, 0, 2)
+script = ExtResource("2_3txfv")
+material = ExtResource("3_ay83j")
+texture_sheet = ExtResource("4_4mgvv")
+top_face = 5
+bottom_face = 10
+
+[node name="Player" parent="." instance=ExtResource("1_uxslv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="DialogueManager" parent="." instance=ExtResource("5_c77ap")]
+
+[node name="RpsManager" type="CanvasLayer" parent="."]
+visible = false
+offset = Vector2(2.08165e-12, 2.08165e-12)
+transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 2.08165e-12)
+follow_viewport_enabled = true
+script = ExtResource("9_l6jjh")
+
+[node name="PlayerHand" type="Sprite2D" parent="RpsManager"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+centered = false
+offset = Vector2(2.08165e-12, 120)
+
+[node name="NpcHand" type="Sprite2D" parent="RpsManager"]
+position = Vector2(352, 2.08165e-12)
+centered = false
+offset = Vector2(2.08165e-12, 120)
+flip_h = true
+flip_v = true
+
+[node name="Text" type="Panel" parent="RpsManager"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 120.0
+offset_bottom = 240.0
+grow_horizontal = 2
+
+[node name="NpcScore" type="RichTextLabel" parent="RpsManager/Text"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = -32.0
+offset_right = 120.0
+theme = SubResource("Theme_lajq1")
+theme_override_fonts/normal_font = ExtResource("10_g2m62")
+theme_override_font_sizes/normal_font_size = 14
+text = "Opponent: 0"
+fit_content = true
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Result" type="Label" parent="RpsManager/Text"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = 240.0
+offset_bottom = 1.0
+grow_horizontal = 2
+theme = SubResource("Theme_lajq1")
+theme_override_fonts/font = ExtResource("9_hh0yw")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="PlayerScore" type="RichTextLabel" parent="RpsManager/Text"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+offset_left = 40.0
+offset_top = -32.0
+offset_right = 120.0
+offset_bottom = 40.0
+theme = SubResource("Theme_lajq1")
+theme_override_fonts/normal_font = ExtResource("10_g2m62")
+theme_override_font_sizes/normal_font_size = 14
+text = "You: 0"
+fit_content = true
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Helper" type="Label" parent="RpsManager"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -18.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_hh0yw")
+theme_override_font_sizes/font_size = 14
+text = "z = rock    x = paper    c = scissors"
+
+[node name="Character" type="CharacterBody3D" parent="."]
+script = ExtResource("7_pgo0a")
+entity_name = "fox_scout"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character"]
+shape = SubResource("BoxShape3D_pbm3s")
+
+[node name="Sprite3D" type="Sprite3D" parent="Character" groups=["npcs"]]
+texture = ExtResource("6_hfec7")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_n3c8v")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("13_k3lxk")
